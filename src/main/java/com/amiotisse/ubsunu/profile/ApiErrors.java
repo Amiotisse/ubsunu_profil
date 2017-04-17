@@ -6,4 +6,5 @@ package com.amiotisse.ubsunu.profile;
  */
 public class ApiErrors {
 
+    public static final ApiError INVALID_TOKEN = new ApiError("INVALID_TOKEN", "Missing or invalid token");
 }
