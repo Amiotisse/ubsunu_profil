@@ -1,5 +1,9 @@
 package com.amiotisse.ubsunu.profile.model;
 
+import com.fasterxml.jackson.annotation.JacksonInject;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.google.common.collect.ImmutableMap;
 
 import java.util.Map;
@@ -18,14 +22,21 @@ public enum UserType {
         this.asString = asString;
     }
 
+    @JsonValue
     @Override
     public String toString() {
         return asString;
     }
+
 
     public static Map<String , UserType> fromString = ImmutableMap
             .<String , UserType> builder()
             .put(UserType.teacher.toString() , UserType.teacher)
             .put(UserType.student.toString() , UserType.student)
             .build();
+
+    @JsonCreator
+    public static UserType create(String userTypeAsString ){
+        return fromString.get(userTypeAsString);
+    }
 }

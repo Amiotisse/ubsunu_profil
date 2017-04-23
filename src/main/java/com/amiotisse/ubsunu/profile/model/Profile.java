@@ -12,23 +12,30 @@ public class Profile {
     private String firstName;
     private String lastName;
     private String userName;
+    private String birthDay;
     private String email;
     private String organisation;
     private UserType userType;
 
+    public Profile(){}
 
-    public Profile(String userId,
-                   String firstName,
-                   String lastName,
-                   String userName,
-                   String email,
-                   UserType userType
+    public Profile(
+            String userId,
+            String firstName,
+            String lastName,
+            String userName,
+            String birthDay,
+            String email,
+            String organisation,
+            UserType userType
     ) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
+        this.birthDay = birthDay;
         this.email = email;
+        this.organisation = organisation;
         this.userType = userType;
     }
 
@@ -62,6 +69,14 @@ public class Profile {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public String getBirthDay() {
+        return birthDay;
+    }
+
+    public void setBirthDay(String birthDay) {
+        this.birthDay = birthDay;
     }
 
     public String getEmail() {

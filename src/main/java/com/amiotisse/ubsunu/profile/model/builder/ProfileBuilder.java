@@ -8,7 +8,9 @@ public class ProfileBuilder {
     private String firstName;
     private String lastName;
     private String userName;
+    private String birthDay;
     private String email;
+    private String organisation;
     private UserType userType;
 
     public ProfileBuilder setUserId(String userId) {
@@ -31,8 +33,18 @@ public class ProfileBuilder {
         return this;
     }
 
+    public ProfileBuilder setBirthDay(String birthDay) {
+        this.birthDay = birthDay;
+        return this;
+    }
+
     public ProfileBuilder setEmail(String email) {
         this.email = email;
+        return this;
+    }
+
+    public ProfileBuilder setOrganisation(String organisation) {
+        this.organisation = organisation;
         return this;
     }
 
@@ -42,6 +54,6 @@ public class ProfileBuilder {
     }
 
     public Profile build() {
-        return new Profile(userId, firstName, lastName, userName, email, userType);
+        return new Profile(userId, firstName, lastName, userName, birthDay, email, organisation, userType);
     }
 }
