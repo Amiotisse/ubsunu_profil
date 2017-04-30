@@ -35,7 +35,7 @@ public class ProfileRepository {
                 collection.find(
                         and(
                                 eq("userName",userName),
-                                eq("userType", userType)
+                                eq("userType", userType.toString())
                         )
                 ).first()
         );

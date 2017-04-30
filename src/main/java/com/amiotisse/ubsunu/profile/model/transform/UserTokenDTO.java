@@ -19,7 +19,7 @@ public class UserTokenDTO implements Function<DecodedJWT, UserToken> {
         return new UserTokenBuilder()
                 .setId(decodedJWT.getClaim("id").asString())
                 .setUserName(decodedJWT.getClaim("user_name").asString())
-                .setUserType( UserType.fromString.get(decodedJWT.getClaim("user_type").asString()))
+                .setUserType( UserType.fromString.get(decodedJWT.getClaim("userType").asString()))
                 .build();
     }
 }
